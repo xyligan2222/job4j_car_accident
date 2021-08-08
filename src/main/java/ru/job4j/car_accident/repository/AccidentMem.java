@@ -5,10 +5,12 @@ import ru.job4j.car_accident.model.Accident;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentMem {
     private final HashMap<Integer, Accident> accidents = new HashMap<>();
+    private static final AtomicInteger ID = new AtomicInteger(5);
 
     private AccidentMem() {
         accidents.put(1, new Accident(1, "Петр", "Описание ", "Брянск"));
@@ -19,5 +21,10 @@ public class AccidentMem {
 
     public Collection<Accident> findAllAccidents() {
         return accidents.values();
+    }
+
+    public void create(Accident accident){
+        int currentId = ID.getAndIncrement();
+        accidents.put(currentId, new Accident(currentId, accident.getName(), accident.getText(), accident.getAddress()));
     }
 }
