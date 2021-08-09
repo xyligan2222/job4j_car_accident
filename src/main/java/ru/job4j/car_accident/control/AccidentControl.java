@@ -21,12 +21,12 @@ public class AccidentControl {
     @GetMapping("/create")
     public String create(Model model) {
 //        model.addAttribute("newAccident",new Accident());
-        return "accident/create";
+        return "index";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute Accident accident) {
         accidents.create(accident);
-        return "redirect:/";
+        return "index";
     }
 }
