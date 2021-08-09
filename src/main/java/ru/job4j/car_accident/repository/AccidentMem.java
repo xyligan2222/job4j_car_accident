@@ -27,4 +27,10 @@ public class AccidentMem {
         int currentId = ID.getAndIncrement();
         accidents.put(currentId, new Accident(currentId, accident.getName(), accident.getText(), accident.getAddress()));
     }
+
+    public void edit(Accident accident){
+        accidents.replace(accident.getId(),accident);
+    }
+
+
 }

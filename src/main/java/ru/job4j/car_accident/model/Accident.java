@@ -1,17 +1,14 @@
 package ru.job4j.car_accident.model;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
-@Component
+
 public class Accident {
     private int id;
     private String name;
     private String text;
     private String address;
-
-    public Accident(){
-    }
 
     public Accident(int id, String name, String text, String address) {
         this.id = id;

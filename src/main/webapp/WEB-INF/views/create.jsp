@@ -1,48 +1,64 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html lang="en">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
-    <title>Accident</title>
+    <title>Создание инцидента</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
 <div class="container pt-3">
-    <div class="row">
-        <div class="card" style="width: 100%">
-            <div class="card-header">
-                Новый инцидент
-            </div>
-            <div class="card-body">
-<%--                <form action="<c:url value='/save'/>" method='POST'>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label>Название:</label>--%>
-<%--                        <input type="text" class="form-control" name="name">--%>
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label>Описание:</label>--%>
-<%--                        <input type="text" class="form-control" name="text">--%>
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label>Адрес:</label>--%>
-<%--                        <input type="text" class="form-control" name="address">--%>
-<%--                    </div>--%>
-<%--                    <input type="submit" class="btn btn-primary" value="Сохранить"/>--%>
-<%--                </form>--%>
-            </div>
-        </div>
+    <div>
+        <%--@elvariable id="Accident" type="java"--%>
+<%--        <form:form modelAttribute="Accident">--%>
+<%--            <table class="table align-content-center table-bordered">&ndash;%&gt;--%>
+<%--                                    <tr>--%>
+<%--                                        <td>Название:</td>--%>
+<%--                                        <form:input path="name" id="nameInput" />--%>
+<%--                                        <td><input type='text' name='name'></td>--%>
+<%--                                    </tr>--%>
+<%--                                    <tr>--%>
+<%--                                        <td>Описание:</td>--%>
+<%--                                        <td><input type='text' name='text'></td>--%>
+<%--                                    </tr>--%>
+<%--                                    <tr>--%>
+<%--                                        <td>Адрес:</td>--%>
+<%--                                        <td><input type='text' name='address'></td>--%>
+<%--                                    </tr>--%>
+<%--                                    <tr>--%>
+<%--                                        <td colspan='2'><input name="submit" type="submit" value="Сохранить"/></td>--%>
+<%--                                    </tr>--%>
+<%--                                </table>--%>
+<%--        </form:form>--%>
+        <form action="<c:url value='/save'/>" method='POST'>
+            <table class="table align-content-center table-bordered">
+                <tr>
+                <td>Айдишник:</td>
+                <td><input type='number' name='id'></td>
+                </tr>
+                <tr>
+                    <td>Название:</td>
+                    <td><input type='text' name='name'></td>
+                </tr>
+                <tr>
+                    <td>Описание:</td>
+                    <td><input type='text' name='text'></td>
+                </tr>
+                <tr>
+                    <td>Адрес:</td>
+                    <td><input type='text' name='address'></td>
+                </tr>
+                <tr>
+                    <td colspan='2'><input name="submit" type="submit" value="Сохранить"/></td>
+                </tr>
+            </table>
+        </form>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
 </html>

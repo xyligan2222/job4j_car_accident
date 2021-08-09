@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
 import ru.job4j.car_accident.model.Accident;
 import ru.job4j.car_accident.repository.AccidentMem;
 
@@ -19,14 +19,23 @@ public class AccidentControl {
     }
 
     @GetMapping("/create")
-    public String create(Model model) {
-//        model.addAttribute("newAccident",new Accident());
-        return "index";
+    public String create() {
+        return "create";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute Accident accident) {
         accidents.create(accident);
-        return "index";
+        return "redirect:/";
+    }
+    @PostMapping("/edit")
+    public String edit(@ModelAttribute Accident accident) {
+        accidents.edit(accident);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit")
+    public String edit(Model model) {
+        return "edit";
     }
 }
