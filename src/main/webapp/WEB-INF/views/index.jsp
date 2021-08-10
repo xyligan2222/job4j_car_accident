@@ -62,6 +62,7 @@
                 <td>${user.name}</td>
                 <td>${user.text}</td>
                 <td>${user.address}</td>
+                <td>${user.type.name}</td>
                 <td><a href="<c:url value='/edit?id=${user.id}&name=${user.name}&text=${user.text}&address=${user.address}'/>">Редактировать инцидент</a></td>
             </tr>
         </c:forEach>

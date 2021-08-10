@@ -2,6 +2,7 @@ package ru.job4j.car_accident.service;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.car_accident.model.Accident;
+import ru.job4j.car_accident.model.AccidentType;
 import ru.job4j.car_accident.repository.AccidentMem;
 
 import java.util.Collection;
@@ -17,6 +18,11 @@ public class AccidentService {
 
     public Collection<Accident> findAllAccident() {
         return  store.findAllAccidents();
+
+    }
+
+    public Collection<AccidentType> getAllTypes() {
+        return store.getAllTypes();
     }
 
 }
