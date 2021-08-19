@@ -53,6 +53,8 @@
             <th scope="col">Имя</th>
             <th scope="col">Описание</th>
             <th scope="col">Адрес</th>
+            <th scope="col">Тип инциедента</th>
+            <th scope="col">Статья</th>
         </tr>
         </thead>
         <tbody>
@@ -63,6 +65,11 @@
                 <td>${user.text}</td>
                 <td>${user.address}</td>
                 <td>${user.type.name}</td>
+                <td>
+                    <c:forEach var="rule" items="${user.rules}">
+                        <span id="${rule.id}">${rule.name}</span>
+                    </c:forEach>
+                </td>
                 <td><a href="<c:url value='/edit?id=${user.id}&name=${user.name}&text=${user.text}&address=${user.address}'/>">Редактировать инцидент</a></td>
             </tr>
         </c:forEach>
