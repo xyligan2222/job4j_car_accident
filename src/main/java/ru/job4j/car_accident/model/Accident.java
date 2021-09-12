@@ -76,7 +76,12 @@ public class Accident {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Accident accident = (Accident) o;
-        return id == accident.id && Objects.equals(name, accident.name) && Objects.equals(text, accident.text) && Objects.equals(address, accident.address) && Objects.equals(type, accident.type) && Objects.equals(rules, accident.rules);
+        return id == accident.id
+                && Objects.equals(name, accident.name)
+                && Objects.equals(text, accident.text)
+                && Objects.equals(address, accident.address)
+                && Objects.equals(type, accident.type)
+                && Objects.equals(rules, accident.rules);
     }
 
     @Override

@@ -47,15 +47,12 @@ public class AccidentMem {
 
     public HashSet<Rule> convertRules (String[] rule){
         HashSet<Rule> hashSet = new HashSet<>();
-        for (Map.Entry<Integer, Rule> entry : rules.entrySet()) {
             for (String rul: rule) {
-                if (entry.getKey().equals(Integer.parseInt(rul))){
-                    hashSet.add(entry.getValue());
-                    break;
+                if (rules.containsKey(Integer.parseInt(rul))){
+                    hashSet.add(rules.get(Integer.parseInt(rul)));
+
                 }
             }
-
-        }
         return hashSet;
     }
 
