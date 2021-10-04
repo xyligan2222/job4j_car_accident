@@ -8,21 +8,21 @@ import ru.job4j.car_accident.repository.AccidentMem;
 import java.util.Collection;
 import java.util.HashMap;
 
-@Service
+//@Service
 public class AccidentService {
-    private final AccidentMem store;
-
-    public AccidentService(AccidentMem store) {
-        this.store = store;
-    }
-
-    public Collection<Accident> findAllAccident() {
-        return  store.findAllAccidents();
-
-    }
-
-    public Collection<AccidentType> getAllTypes() {
-        return store.getAllTypes();
-    }
+//    private final AccidentMem store;
+//
+//    public AccidentService(AccidentMem store) {
+//        this.store = store;
+//    }
+//
+//    public Collection<Accident> findAllAccident() {
+//        return  store.findAllAccidents();
+//
+//    }
+//
+//    public Collection<AccidentType> getAllTypes() {
+//        return store.getAllTypes();
+//    }
 
 }
